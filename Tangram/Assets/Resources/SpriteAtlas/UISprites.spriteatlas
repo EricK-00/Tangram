@@ -38,9 +38,13 @@ SpriteAtlas:
     cachedData: {fileID: 0}
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
-  - {fileID: 21300000, guid: 836eca08b5e3b4550a4538c2238266fd, type: 3}
+  - {fileID: 21300000, guid: 2e053c86f54c9204281513d7e186cde0, type: 2}
+  - {fileID: 21300000, guid: c054bb004e8e4ce498a93a1ada895c8e, type: 2}
+  - {fileID: 21300000, guid: 96c811ce100793f4a9ea453d91c37dd3, type: 3}
   m_PackedSpriteNamesToIndex:
-  - GUI
+  - Btn_Long_Green
+  - Btn_Long_Green_Pressed
+  - Woodboard
   m_RenderDataMap: {}
   m_Tag: UISprites
   m_IsVariant: 0
