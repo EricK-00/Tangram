@@ -6,9 +6,7 @@ using UnityEngine.UI;
 
 public class TangramLvPart : MonoBehaviour
 {
-    //private string[] PARTS_IMAGE_NAMES = new string[7] { "Tangram_BigTriangle1", "Tangram_BigTriangle2", " ", " ", " ", " ", " "};
-
-    public PartsType partsType = PartsType.NONE;
+    public PartsType partType = PartsType.NONE;
     private Image partsImage;
     private PlayLevel playLevel;
 
@@ -22,15 +20,15 @@ public class TangramLvPart : MonoBehaviour
         switch (partsImage.sprite.name)
         {
             case "Tangram_BigTriangle1":
-                partsType = PartsType.TANGRAM_BIG_TRIANGLE;
+                partType = PartsType.TANGRAM_BIG_TRIANGLE;
                 break;
 
             case "Tangram_BigTriangle2":
-                partsType = PartsType.TANGRAM_BIG_TRIANGLE;
+                partType = PartsType.TANGRAM_BIG_TRIANGLE;
                 break;
 
             default:
-                partsType = PartsType.NONE;
+                partType = PartsType.NONE;
                 break;
         }       // switch
     }       //Start()

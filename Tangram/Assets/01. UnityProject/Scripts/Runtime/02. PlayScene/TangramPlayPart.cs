@@ -2,10 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 public class TangramPlayPart : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IDragHandler
 {
+    public PartsType partType = PartsType.NONE;
+    private Image partsImage;
+
     private bool isClicked;
     private RectTransform rect;
     private TangramInitZone tangramInitZone;
@@ -17,8 +21,24 @@ public class TangramPlayPart : MonoBehaviour, IPointerDownHandler, IPointerUpHan
         isClicked = false;
         rect = gameObject.GetRect();
         tangramInitZone = transform.parent.gameObject.GetComponentMust<TangramInitZone>();
+        playLevel = GameManager.Instance.gameObjs[GData.OBJ_NAME_CURRENT_LEVEL].GetComponentMust<PlayLevel>();
 
-        playLevel = GameManager.Instance.gameObjs["Level_1"].GetComponentMust<PlayLevel>();
+        partsImage = gameObject.FindChildObj("TangramImage").GetComponentMust<Image>();
+
+        switch (partsImage.sprite.name)
+        {
+            case "Tangram_BigTriangle1":
+                partType = PartsType.TANGRAM_BIG_TRIANGLE;
+                break;
+
+            case "Tangram_BigTriangle2":
+                partType = PartsType.TANGRAM_BIG_TRIANGLE;
+                break;
+
+            default:
+                partType = PartsType.NONE;
+                break;
+        }       // switch
     }
 
     // Update is called once per frame
@@ -27,19 +47,27 @@ public class TangramPlayPart : MonoBehaviour, IPointerDownHandler, IPointerUpHan
         
     }
 
-    //! ¸¶¿ì½º ¹öÆ°À» ´­·¶À» ¶§
+    //! ë§ˆìš°ìŠ¤ ë²„íŠ¼ì„ ëˆŒë €ì„ ë•Œ
     public void OnPointerDown(PointerEventData eventData)
     {
         isClicked = true;
     }
 
-    //! ¸¶¿ì½º ¹öÆ°À» ¶ÃÀ» ¶§
+    //! ë§ˆìš°ìŠ¤ ë²„íŠ¼ì„ ë—ì„ ë•Œ
     public void OnPointerUp(PointerEventData eventData)
     {
         isClicked = false;
+
+        TangramLvPart closeLvpart = playLevel.GetCloseSameTypePart(partType, transform.position);
+
+        if (closeLvpart != null)
+        {
+            transform.position = closeLvpart.transform.position;
+            GFunc.Log($"ê°€ì¥ ê°€ê¹Œìš´ ì¡°ê°: {closeLvpart.name}");
+        }
     }
 
-    //! ¸¶¿ì½º¸¦ µå·¡±× ÁßÀÏ ¶§
+    //! ë§ˆìš°ìŠ¤ë¥¼ ë“œë˜ê·¸ ì¤‘ì¼ ë•Œ
     public void OnDrag(PointerEventData eventData)
     {
         if (isClicked)
@@ -48,8 +76,6 @@ public class TangramPlayPart : MonoBehaviour, IPointerDownHandler, IPointerUpHan
 
             //Vector2 mousePos = Camera.main.ScreenToWorldPoint(eventData.position);
             //rect.position = new Vector3(mousePos.x, mousePos.y, 90);
-
-            GFunc.Log($"¸¶¿ì½º Æ÷Áö¼Ç È®ÀÎ: ({eventData.position}, inputMouse{Input.mousePosition}, À§Ä¡: {transform.position})");
         }
     }
 }
