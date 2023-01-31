@@ -33,14 +33,33 @@ SpriteAtlas:
     variantMultiplier: 1
     packables:
     - {fileID: 102900000, guid: 0302ad4712267404ea8f743facec8e49, type: 3}
+    - {fileID: 102900000, guid: 18781e75ac3c36341b6a361f3ee7a9f6, type: 3}
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
-  - {fileID: 21300000, guid: 836eca08b5e3b4550a4538c2238266fd, type: 3}
+  - {fileID: 21300000, guid: d87f8a1009a852e47a1b3baa0253b5b4, type: 3}
+  - {fileID: 21300000, guid: 2e053c86f54c9204281513d7e186cde0, type: 2}
+  - {fileID: 21300000, guid: c054bb004e8e4ce498a93a1ada895c8e, type: 2}
+  - {fileID: 21300000, guid: 98991ba6a3262164ead6d40d6bd47e8f, type: 3}
+  - {fileID: 21300000, guid: 0fb96d1853d03da4bace40a20037a7c1, type: 3}
+  - {fileID: 21300000, guid: fd1dbb9ac9167a34ea3d3f139677f78a, type: 3}
+  - {fileID: 21300000, guid: bbf494cbc153c7c4c95bbccfb6c5015d, type: 3}
+  - {fileID: 21300000, guid: 71b613dc41a90444a85d174ffaa812b2, type: 3}
+  - {fileID: 21300000, guid: b5c8155d2ec4a514b8f97d9e352e37f3, type: 3}
+  - {fileID: 21300000, guid: 96c811ce100793f4a9ea453d91c37dd3, type: 3}
   m_PackedSpriteNamesToIndex:
-  - GUI
+  - Tangram_SmallTriangle1
+  - Btn_Long_Green
+  - Btn_Long_Green_Pressed
+  - Tangram_SmallRectangle
+  - Tangram_MiddleTriangle1
+  - Tangram_SmallTriangle2
+  - Tangram_BigTriangle1
+  - Tangram_BigTriangle2
+  - Tangram_Parallelogram
+  - Woodboard
   m_RenderDataMap: {}
   m_Tag: UISprites
   m_IsVariant: 0
