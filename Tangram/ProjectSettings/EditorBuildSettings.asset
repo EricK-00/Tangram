@@ -7,13 +7,19 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
     path: Assets/Scenes/Scene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
 =======
+=======
+>>>>>>> origin/Develop
     path: Assets/01. UnityProject/Scenes/01. TitleScene.unity
     guid: 27b3e043c391b2a41a8b7098cf8ad358
   - enabled: 1
     path: Assets/01. UnityProject/Scenes/02. PlayScene.unity
     guid: 1fecc56e5b7798b418d9e2eba80ddf82
+<<<<<<< HEAD
+>>>>>>> origin/Develop
+=======
 >>>>>>> origin/Develop
   m_configObjects: {}
